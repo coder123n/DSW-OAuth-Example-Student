@@ -82,7 +82,7 @@ def renderPage2():
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
         user_data_pprint = '';
-    return render_template('page2.html')
+    return render_template('page2.html',dump_user_data=user_data_pprint)
 
 @github.tokengetter
 def get_github_oauth_token():

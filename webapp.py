@@ -78,7 +78,7 @@ def renderPage1():
 
 @app.route('/page2')
 def renderPage2():
-     if 'user_data' in session:
+    if 'user_data' in session:
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
         user_data_pprint = '';

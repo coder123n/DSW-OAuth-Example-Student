@@ -46,7 +46,8 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
-    return render_template('message.html', message='You were logged out')
+    message='You were logged out'
+    return render_template('home.html', message=message)#'You were logged out')
 
 @app.route('/login/authorized')#the route should match the callback URL registered with the OAuth provider
 def authorized():
@@ -65,7 +66,7 @@ def authorized():
             session.clear()
             print(inst)
             message = 'Unable to log in. Please try again.'
-    return render_template('message.html', message=message)
+    return render_template('home.html', message=message)
 
 
 @app.route('/page1')

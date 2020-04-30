@@ -6,18 +6,20 @@
 
 {% with messages = get_flashed_messages(with_categories=true) %} 
  {% if messages %}
-  {% for message in messages %}
-   {% set cls = "alert alert-success alert-dismissible" %}
- {% elif category == "error" %}
-   {% set cls = "alert alert-warning alert-dismissible" %}
- {% elif category == "warning" %}
-   {% set cls = "alert alert-danger alert-dismissible" %}
+  {% for category, message in messages %}
+      {% if category == "message" %}
+          {% set cls = "alert alert-success alert-dismissible" %}
+      {% elif category == "error" %}
+          {% set cls = "alert alert-warning alert-dismissible" %}
+      {% elif category == "warning" %}
+          {% set cls = "alert alert-danger alert-dismissible" %}
+      {% endif %}
   {% endfor %}
- {% endif %}
    <div class="{{ cls }}">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
      {{message}}
    </div>
+{% endif %}
 {% endwith %}
 
 <h1>Home</h1>

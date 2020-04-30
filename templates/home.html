@@ -14,13 +14,13 @@
         {% elif category == "warning" %}
           {% set cls = "alert alert-danger alert-dismissible" %}
         {% endif %}
-    
+      {% endfor %}
         <div class="{{ cls }}">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           {{message}}
         </div> 
 
-      {% endfor %}
+      
     {% endif %}
   {% endwith %}
 

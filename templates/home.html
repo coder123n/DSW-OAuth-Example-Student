@@ -5,22 +5,24 @@
 {% block content %}
 
 {% with messages = get_flashed_messages(with_categories=true) %} 
- {% if messages %}
-  {% for category, message in messages %}
-      {% if category == "message" %}
+    {% if messages %}
+      {% for category, message in messages %}
+        {% if category == "message" %}
           {% set cls = "alert alert-success alert-dismissible" %}
-      {% elif category == "error" %}
+        {% elif category == "error" %}
           {% set cls = "alert alert-warning alert-dismissible" %}
-      {% elif category == "warning" %}
+        {% elif category == "warning" %}
           {% set cls = "alert alert-danger alert-dismissible" %}
-      {% endif %}
-  {% endfor %}
-   <div class="{{ cls }}">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-     {{message}}
-   </div>
-{% endif %}
-{% endwith %}
+        {% endif %}
+    
+        <div class="{{ cls }}">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          {{message}}
+        </div> 
+
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
 
 <h1>Home</h1>
   <ul>

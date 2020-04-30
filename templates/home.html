@@ -8,16 +8,16 @@
  {% if messages %}
   {% for message in messages %}
    {% set cls = "alert alert-success alert-dismissible" %}
-  {% elif category == "error" %}
+ {% elif category == "error" %}
    {% set cls = "alert alert-warning alert-dismissible" %}
-  {% elif category == "warning" %}
+ {% elif category == "warning" %}
    {% set cls = "alert alert-danger alert-dismissible" %}
-        <div class="{{ cls }}">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{message}}
-        </div>
   {% endfor %}
  {% endif %}
+   <div class="{{ cls }}">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+     {{message}}
+   </div>
 {% endwith %}
 
 <h1>Home</h1>
